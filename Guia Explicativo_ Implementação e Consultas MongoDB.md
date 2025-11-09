@@ -8,15 +8,8 @@ Este guia explica como realizar as etapas de implementação (A2) e consultas (A
 
 A implementação envolve a criação do banco de dados, a aplicação do *Schema Validation* nas coleções e a inserção dos dados.
 
-### 1. Configuração no MongoDB Atlas (A2.1)
 
-A primeira etapa é criar um cluster no **MongoDB Atlas**, que é a plataforma de banco de dados como serviço (DBaaS) do MongoDB.
-
-1.  **Criação do Cluster:** Acesse o MongoDB Atlas, crie uma conta (se necessário) e siga o assistente para criar um novo *Cluster*. Escolha a opção *M0 Sandbox* (gratuita) para fins de estudo.
-2.  **Configuração de Acesso:** Configure o *IP Access List* para permitir conexões do seu endereço IP e crie um *Database User* com permissões de leitura e escrita.
-3.  **Conexão:** Obtenha a *Connection String* (string de conexão) do seu cluster. Ela será usada para conectar o *MongoDB Shell* (`mongosh`) ou o *MongoDB Compass*.
-
-### 2. Criação das Coleções com Schema Validation (A2.2)
+### Criação das Coleções com Schema Validation (A2.2)
 
 O *Schema Validation* é crucial para garantir que os documentos inseridos nas coleções `pedidos` e `produtos` sigam a estrutura definida (JSON Schema).
 
@@ -146,7 +139,7 @@ db.produtos.insertMany([
          "nome": "Eletrônicos"
       }
    }
-   // Adicione mais documentos aqui
+  
 ])
 ```
 
@@ -208,7 +201,7 @@ db.pedidos.insertMany([
          }
       ]
    }
-   // Adicione mais documentos aqui
+   
 ])
 ```
 
@@ -233,7 +226,7 @@ db.produtos.aggregate([
       }
    },
    {
-      $sort: { total_produtos: -1 } // Opcional: Ordena do maior para o menor
+      $sort: { total_produtos: -1 } 
    }
 ])
 ```

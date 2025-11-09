@@ -8,8 +8,6 @@ O modelo relacional fornecido é composto pelas seguintes entidades: `ITEM_PEDID
 
 Para a modelagem não-relacional (MongoDB), o objetivo principal é **desnormalizar** o esquema, agrupando dados que são frequentemente acessados juntos (princípio da **Projeção de Dados** e **Consultas**). A principal entidade de acesso e consulta neste domínio de e-commerce é o **Pedido** (`PEDIDO`).
 
-Abaixo está a proposta de reorganização, focada em duas coleções principais: `pedidos` e `produtos`.
-
 #### Coleção Principal: `pedidos`
 
 Esta coleção será o centro do modelo, incorporando (embedding) a maioria dos dados relacionados para otimizar as consultas de histórico de pedidos, detalhes de entrega e informações do cliente.
